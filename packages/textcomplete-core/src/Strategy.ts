@@ -12,6 +12,7 @@ export interface StrategyProps<T = any> {
     match: RegExpMatchArray
   ) => void
   replace: (data: T) => ReplaceResult
+  skipBackReferences?: boolean
   cache?: boolean
   context?: (text: string) => string | boolean
   template?: (data: T, term: string) => string
@@ -64,6 +65,10 @@ export class Strategy<T> {
 
   getId(): string | null {
     return this.props.id || null
+  }
+
+  skipBackReferences(): boolean | null {
+    return this.props.skipBackReferences || null
   }
 
   match(text: string): RegExpMatchArray | null {

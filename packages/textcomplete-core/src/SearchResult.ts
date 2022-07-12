@@ -10,7 +10,7 @@ export class SearchResult<T = unknown> {
     private readonly strategy: Strategy<T>
   ) {}
 
-  getReplacementData(beforeCursor: string, skipBackReferences: boolean): {
+  getReplacementData(beforeCursor: string): {
     start: number
     end: number
     beforeCursor: string
@@ -29,7 +29,7 @@ export class SearchResult<T = unknown> {
     let replacement = result
       .replace(MAIN, match[0]);
     
-    if(!skipBackReferences) {
+    if(!this.strategy.skipBackReferences()) {
       replacement = replacement.replace(PLACE, (_, p) => match[parseInt(p)])
     }
 
@@ -41,8 +41,8 @@ export class SearchResult<T = unknown> {
     }
   }
 
-  replace(beforeCursor: string, afterCursor: string, skipBackReferences: boolean = false): [string, string] | void {
-    const replacement = this.getReplacementData(beforeCursor, skipBackReferences)
+  replace(beforeCursor: string, afterCursor: string): [string, string] | void {
+    const replacement = this.getReplacementData(beforeCursor)
 
     if (replacement === null) return
 
