@@ -1,6 +1,6 @@
 {
   "name": "@textcomplete/codemirror",
-  "version": "0.1.13-alpha.0",
+  "version": "0.1.14-alpha.0",
   "description": "Textcomplete editor for CodeMirror",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
