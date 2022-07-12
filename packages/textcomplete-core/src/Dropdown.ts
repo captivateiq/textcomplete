@@ -316,7 +316,7 @@ class DropdownItem {
     span.innerHTML = this.searchResult.render()
     li.appendChild(span)
 
-    li.addEventListener("click", this.onClick)
+    li.addEventListener("mousedown", this.onClick)
 
     this.el = li
   }
@@ -324,7 +324,7 @@ class DropdownItem {
   destroy(): this {
     const li = this.el
     li.parentNode?.removeChild(li)
-    li.removeEventListener("click", this.onClick, false)
+    li.removeEventListener("mousedown", this.onClick, false)
     return this
   }
 
