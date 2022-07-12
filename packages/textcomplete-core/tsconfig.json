@@ -1,7 +1,18 @@
 {
-  "extends": "../../tsconfig-base.json",
   "compilerOptions": {
     "outDir": "dist",
+    "jsx": "react",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "target": "ES6",
+    "module": "commonjs",
+    "lib": ["ES2019", "DOM"],
+    "sourceMap": true,
+    "declaration": true,
+    "strict": true,
+    "noImplicitThis": true,
+    "noImplicitAny": true,
+    "skipLibCheck": true
   },
   "include": [
     "src/**/*"
