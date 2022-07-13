@@ -19,7 +19,7 @@
   "dependencies": {
     "eventemitter3": "^4.0.4"
   },
-  "devDependemcoes": {
+  "devDependencies": {
     "typescript": "^4.4.3"
   },
   "publishConfig": {
