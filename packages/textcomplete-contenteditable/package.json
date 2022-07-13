@@ -1,6 +1,6 @@
 {
   "name": "@textcomplete/contenteditable",
-  "version": "0.1.13-alpha.4",
+  "version": "0.1.13-alpha.5",
   "description": "Textcomplete editor for contenteditable",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -16,10 +16,10 @@
     "lint": "eslint 'src/**/*.ts'"
   },
   "dependencies": {
-    "@textcomplete/utils": "^0.1.13-alpha.4"
+    "@textcomplete/utils": "^0.1.13-alpha.5"
   },
   "devDependencies": {
-    "@textcomplete/core": "^0.1.13-alpha.4"
+    "@textcomplete/core": "^0.1.13-alpha.5"
   },
   "peerDependencies": {
     "@textcomplete/core": "^0.1.9"
