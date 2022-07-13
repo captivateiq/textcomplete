@@ -26,12 +26,9 @@ export class SearchResult<T = unknown> {
     }
     const match = this.strategy.match(beforeCursor)
     if (match == null || match.index == null) return null
-    let replacement = result
-      .replace(MAIN, match[0]);
-    
-    if(!this.strategy.skipBackReferences()) {
-      replacement = replacement.replace(PLACE, (_, p) => match[parseInt(p)])
-    }
+    const replacement = result
+      .replace(MAIN, match[0])
+      .replace(PLACE, (_, p) => match[parseInt(p)])
 
     return {
       start: match.index,
