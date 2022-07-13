@@ -12,6 +12,7 @@ export interface StrategyProps<T = any> {
     match: RegExpMatchArray
   ) => void
   replace: (data: T) => ReplaceResult
+  skipBackReferences?: boolean
   cache?: boolean
   context?: (text: string) => string | boolean
   template?: (data: T, term: string) => string
@@ -20,7 +21,7 @@ export interface StrategyProps<T = any> {
 }
 
 export const DEFAULT_INDEX = 1
-
+const DEFAULT_SKIP_BACK_REFERENCES = false
 export class Strategy<T> {
   private cache: Record<string, T[]> = {}
 
@@ -64,6 +65,10 @@ export class Strategy<T> {
 
   getId(): string | null {
     return this.props.id || null
+  }
+
+  skipBackReferences(): boolean  {
+    return this.props.skipBackReferences || DEFAULT_SKIP_BACK_REFERENCES
   }
 
   match(text: string): RegExpMatchArray | null {
