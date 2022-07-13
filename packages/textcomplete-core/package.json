@@ -17,9 +17,7 @@
     "test": "jest"
   },
   "dependencies": {
-    "eventemitter3": "^4.0.4"
-  },
-  "devDependemcoes": {
+    "eventemitter3": "^4.0.4",
     "typescript": "^4.4.3"
   },
   "publishConfig": {
