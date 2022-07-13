@@ -21,7 +21,7 @@ export interface StrategyProps<T = any> {
 }
 
 export const DEFAULT_INDEX = 1
-
+const DEFAULT_SKIP_BACK_REFERENCES = false
 export class Strategy<T> {
   private cache: Record<string, T[]> = {}
 
@@ -68,7 +68,7 @@ export class Strategy<T> {
   }
 
   skipBackReferences(): boolean  {
-    return this.props.skipBackReferences || false
+    return this.props.skipBackReferences || DEFAULT_SKIP_BACK_REFERENCES
   }
 
   match(text: string): RegExpMatchArray | null {
