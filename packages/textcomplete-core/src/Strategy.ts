@@ -67,8 +67,8 @@ export class Strategy<T> {
     return this.props.id || null
   }
 
-  skipBackReferences(): boolean | null {
-    return this.props.skipBackReferences || null
+  skipBackReferences(): boolean  {
+    return this.props.skipBackReferences || false
   }
 
   match(text: string): RegExpMatchArray | null {
